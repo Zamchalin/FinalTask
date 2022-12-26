@@ -1,14 +1,24 @@
-﻿string[] array1 = new string[5] {"123", "23", "hello", "world", "res"};
-string[] array2 = new string[array1.Length];
-void SecondArrayWithIF(string[] array1, string[] array2)
+﻿string[] arrayinput = new string[5] {"123", "23", "hello", "world", "res"};
+string[] result = new string[arrayinput.Length];
+void SecondArrayWithIF(string[] arrayinput, string[] result)
 {
     int count = 0;
-    for (int i = 0; i < array1.Length; i++)
+    for (int i = 0; i < arrayinput.Length; i++)
     {
-    if(array1[i].Length <= 3)
+    if(arrayinput[i].Length <= 3)
         {
-        array2[count] = array1[i];
+        result[count] = arrayinput[i];
         count++;
         }
     }
 }
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    }
+    Console.WriteLine();
+}
+SecondArrayWithIF(arrayinput, result);
+PrintArray(result);
